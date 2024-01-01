@@ -1,3 +1,51 @@
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build.build_meta"
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ibans"
+version = "1.0.0"
+description = "Parses Iban and Swift/BIC"
+authors = [
+    {name = "Ilton Ingui", email = "iltoningui@outlook.com"},
+]
+dependencies = [
+    "Pygments==2.7.4",
+    "atomicwrites==1.4.0",
+    "attrs==20.3.0",
+    "colorama==0.4.4",
+    "iniconfig==1.1.1",
+    "packaging==20.8",
+    "pluggy==0.13.1",
+    "pyparsing==2.4.7",
+    "toml==0.10.2",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Office/Business :: Financial",
+]
+
+[tool.pdm]
+package-type = "library"
+package-dir = "src"
+[tool.pdm.dev-dependencies]
+dev = [
+    "flake8",
+    "mccabe",
+    "pycodestyle",
+    "pytest",
+    "ruff>=0.1.9",
+]
+
+[project.urls]
+Homepage = "https://github.com/iltoningui/ibans-python"
+
